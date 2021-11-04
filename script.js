@@ -4,8 +4,8 @@ const firstNames = ["Brad", "Zintis", "Joe", "Phoebe", "Giuseppe"];
 
 const lastNames = ["Jones", "Smith", "Brown", "White", "Johnson"];
 
-function randomFirst() {
-  Math.trunc(Math.random() * 5 + 1);
+const first = function() {
+  let randomFirst = Math.trunc(Math.random() * 5 + 1);
   if (randomFirst === 1) {
     return firstNames[0];
   } else if (randomFirst === 2) {
@@ -19,8 +19,8 @@ function randomFirst() {
   }
 }
 
-function randomLast() {
-  Math.trunc(Math.random() * 5 + 1);
+const last = function() {
+  let randomLast = Math.trunc(Math.random() * 5 + 1);
   if (randomLast === 1) {
     return lastNames[0];
   } else if (randomLast === 2) {
@@ -34,16 +34,16 @@ function randomLast() {
   }
 }
 
-const randomAge = () => Math.trunc(Math.random() * 72 + 1);
+const age = () => Math.trunc(Math.random() * 18 + 18);
 
-const randomGPA = () => Math.trunc(Math.random() * 4 + 1);
+const GPA = () => Math.trunc(Math.random() * 4 + 1);
 
 function generateStudent() {
   const studentList = {
-    first: randomFirst(),
-    last: randomLast(),
-    age: randomAge(),
-    gpa: randomGPA(),
+    first: first(),
+    last: last(),
+    age: age(),
+    gpa: GPA(),
   };
   return studentList;
 }
