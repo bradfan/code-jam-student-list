@@ -1,10 +1,10 @@
 "use strict";
-console.log("script tag");
+
 const firstNames = ["Brad", "Zintis", "Joe", "Phoebe", "Giuseppe"];
 
 const lastNames = ["Jones", "Smith", "Brown", "White", "Johnson"];
 
-randomFirst = function () {
+function randomFirst() {
   Math.trunc(Math.random() * 5 + 1);
   if (randomFirst === 1) {
     return firstNames[0];
@@ -17,9 +17,9 @@ randomFirst = function () {
   } else {
     return firstNames[4];
   }
-};
+}
 
-randomLast = function () {
+function randomLast() {
   Math.trunc(Math.random() * 5 + 1);
   if (randomLast === 1) {
     return lastNames[0];
@@ -32,7 +32,7 @@ randomLast = function () {
   } else {
     return lastNames[4];
   }
-};
+}
 
 const randomAge = () => Math.trunc(Math.random() * 72 + 1);
 
@@ -45,17 +45,15 @@ function generateStudent() {
     age: randomAge(),
     gpa: randomGPA(),
   };
-  return studentList
-    
+  return studentList;
 }
 function generateStudents(num) {
-    let result = [];
-    for (let i = 0; i <= num; i++) {
-        result.push(generateStudent());
-  
-    }
-    return result
+  let result = [];
+  for (let i = 0; i <= num; i++) {
+    result.push(generateStudent());
+  }
+  return result;
 }
-const student = generateStudents(100)
+const student = generateStudents(100);
 
 console.log(student);
