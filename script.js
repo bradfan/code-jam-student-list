@@ -4,12 +4,11 @@ const firstNames = ["Brad", "Zintis", "Joe", "Phoebe", "Giuseppe"];
 const lastNames = ["Jones", "Smith", "Brown", "White", "Johnson"];
 const randomAge = () => Math.trunc(Math.random() * 18 + 18);
 const randomGPA = () => Math.trunc(Math.random() * 4 + 1);
+ 
 
-
-
-document.querySelector('.see').addEventListener("click", function () {
-  let number = Number(document.querySelector(".number").value -1);
-  console.log('input minus 1:',number);
+document.querySelector(".preview").addEventListener("click", function () {
+  let number = Number(document.querySelector(".number").value);
+  console.log("input", number);
 
   const fName = function () {
     let randomFirst = Math.trunc(Math.random() * 5 + 1);
@@ -51,19 +50,16 @@ document.querySelector('.see').addEventListener("click", function () {
     return studentList;
   }
   function generateList(number) {
+    console.log('for loop input', number);
     let result = [];
     for (let i = 0; i <= number; i++) {
       result.push(generateStudent());
-        // console.log(generateStudent())
-     
       return result;
-    }  
     }
-  
+  }
 
   console.log(generateList(number));
 });
-
 
 // for(let i = 0; i <= result.length; i++) {
 //     let containerEl = document.createElement('div');
@@ -81,5 +77,5 @@ document.querySelector('.see').addEventListener("click", function () {
 //     let gpa = document.createElement('p');
 //     gpa.innerHTML = 'GPA:';
 //     smallCard.append(gpa);
-    
+
 // }
