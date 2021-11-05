@@ -2,6 +2,8 @@
 
 const firstNames = ["Brad", "Zintis", "Joe", "Phoebe", "Giuseppe"];
 const lastNames = ["Jones", "Smith", "Brown", "White", "Johnson"];
+const globalContainerEl = document.getElementById("containerEl");
+
 const randomAge = () => Math.trunc(Math.random() * 18 + 18);
 const randomGPA = () => Math.trunc(Math.random() * 4 + 1);
 
@@ -61,6 +63,7 @@ document.querySelector(".preview").addEventListener("click", function () {
       let gpa = document.createElement("p");
       gpa.innerHTML = `GPA: ${randomGPA()} `;
       smallCard.append(gpa);
+      globalContainerEl.append(smallCard);
     }
   };
   console.log(generateCards(number));
