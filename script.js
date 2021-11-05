@@ -4,10 +4,12 @@ const firstNames = ["Brad", "Zintis", "Joe", "Phoebe", "Giuseppe"];
 const lastNames = ["Jones", "Smith", "Brown", "White", "Johnson"];
 const randomAge = () => Math.trunc(Math.random() * 18 + 18);
 const randomGPA = () => Math.trunc(Math.random() * 4 + 1);
- 
 
 document.querySelector(".preview").addEventListener("click", function () {
   let number = Number(document.querySelector(".number").value);
+  if (number === 0) {
+    return alert("Pick a number jackass, we haven't got all day.");
+  }
   console.log("input", number);
 
   const fName = function () {
@@ -40,26 +42,52 @@ document.querySelector(".preview").addEventListener("click", function () {
     }
   };
 
-  function generateStudent() {
-    const studentList = {
-      first: fName(),
-      last: lName(),
-      age: randomAge(),
-      gpa: randomGPA(),
-    };
-    return studentList;
-  }
-  function generateList(number) {
-    console.log('for loop input', number);
-    let result = [];
-    for (let i = 0; i <= number; i++) {
-      result.push(generateStudent());
-      return result;
+  const generateCards = function (number) {
+    for (let i = 0; i < number; i++) {
+      let containerEl = document.createElement("div");
+      containerEl.innerHTML = "";
+      console.log(containerEl);
+      let smallCard = document.createElement("div");
+      containerEl.append(smallCard);
+      let firstName = document.createElement("p");
+      firstName.innerHTML = `First Name: ${fName()} `;
+      smallCard.append(firstName);
+      let lastName = document.createElement("p");
+      lastName.innerHTML = `Last Name: ${lName()} `;
+      smallCard.append(lastName);
+      let age = document.createElement("p");
+      age.innerHTML = `Age: ${randomAge()} `;
+      smallCard.append(age);
+      let gpa = document.createElement("p");
+      gpa.innerHTML = `GPA: ${randomGPA()} `;
+      smallCard.append(gpa);
     }
-  }
-
-  console.log(generateList(number));
+  };
+  console.log(generateCards(number));
 });
+
+// function generateStudent() {
+//   const studentList = {
+//     first: fName(),
+//     last: lName(),
+//     age: randomAge(),
+//     gpa: randomGPA(),
+//   };
+//   return studentList;
+
+// }
+
+// function generateList(number) {
+//   let result = [];
+//   for (let i = 0; i <= number; i++) {
+//     console.log('for loop input', number);
+//     result.push(generateStudent());
+//     console.log(result);
+//     return result;
+//   }
+// }
+
+// console.log(generateList(number));
 
 // for(let i = 0; i <= result.length; i++) {
 //     let containerEl = document.createElement('div');
