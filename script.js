@@ -9,9 +9,8 @@ const randomGPA = () => Math.trunc(Math.random() * 4 + 1);
 
 document.querySelector(".preview").addEventListener("click", function () {
   let number = Number(document.querySelector(".number").value);
-  if (number === 0) {
-    return alert("You must selct a number; please try again.");
-  }
+  if (number === 0) return alert("You must selct a number; please try again.");
+
   const fName = function () {
     let randomFirst = Math.trunc(Math.random() * 5 + 1);
     if (randomFirst === 1) {
@@ -41,7 +40,7 @@ document.querySelector(".preview").addEventListener("click", function () {
       return lastNames[4];
     }
   };
-
+  
   const generateCards = function (number) {
     for (let i = 0; i < number; i++) {
       let containerEl = document.createElement("div");
@@ -60,9 +59,9 @@ document.querySelector(".preview").addEventListener("click", function () {
       let gpa = document.createElement("p");
       gpa.innerHTML = `GPA: ${randomGPA()} `;
       smallCard.append(gpa);
+      
       globalContainerEl.append(smallCard);
     }
   };
   generateCards(number);
 });
-
