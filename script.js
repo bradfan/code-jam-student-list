@@ -10,10 +10,8 @@ const randomGPA = () => Math.trunc(Math.random() * 4 + 1);
 document.querySelector(".preview").addEventListener("click", function () {
   let number = Number(document.querySelector(".number").value);
   if (number === 0) {
-    return alert("Pick a number jackass, we haven't got all day.");
+    return alert("You must selct a number; please try again.");
   }
-  console.log("input", number);
-
   const fName = function () {
     let randomFirst = Math.trunc(Math.random() * 5 + 1);
     if (randomFirst === 1) {
@@ -48,8 +46,7 @@ document.querySelector(".preview").addEventListener("click", function () {
     for (let i = 0; i < number; i++) {
       let containerEl = document.createElement("div");
       containerEl.innerHTML = "";
-      console.log(containerEl);
-      let smallCard = document.createElement("div");
+      let smallCard = document.createElement("form");
       containerEl.append(smallCard);
       let firstName = document.createElement("p");
       firstName.innerHTML = `First Name: ${fName()} `;
@@ -66,47 +63,6 @@ document.querySelector(".preview").addEventListener("click", function () {
       globalContainerEl.append(smallCard);
     }
   };
-  console.log(generateCards(number));
+  generateCards(number);
 });
 
-// function generateStudent() {
-//   const studentList = {
-//     first: fName(),
-//     last: lName(),
-//     age: randomAge(),
-//     gpa: randomGPA(),
-//   };
-//   return studentList;
-
-// }
-
-// function generateList(number) {
-//   let result = [];
-//   for (let i = 0; i <= number; i++) {
-//     console.log('for loop input', number);
-//     result.push(generateStudent());
-//     console.log(result);
-//     return result;
-//   }
-// }
-
-// console.log(generateList(number));
-
-// for(let i = 0; i <= result.length; i++) {
-//     let containerEl = document.createElement('div');
-//     containerEl.innerHTML = '';
-//     let smallCard = document.createElement('div');
-//     let firstName = document.createElement('p');
-//     firstName.innerHTML = 'First Name:';
-//     smallCard.append(firstName);
-//     let lastName = document.createElement('p');
-//     lastName.innerHTML = 'Last Name:';
-//     smallCard.append(lastName);
-//     let age = document.createElement('p');
-//     age.innerHTML = 'Age:';
-//     smallCard.append(age);
-//     let gpa = document.createElement('p');
-//     gpa.innerHTML = 'GPA:';
-//     smallCard.append(gpa);
-
-// }
