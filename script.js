@@ -8,6 +8,8 @@ const randomAge = () => Math.trunc(Math.random() * 18 + 18);
 const randomGPA = () => Math.trunc(Math.random() * 4 + 1);
 
 document.querySelector(".preview").addEventListener("click", function () {
+  // clears the created element upon each "click"
+  containerEl.innerHTML = "";
   let number = Number(document.querySelector(".number").value);
   if (number === 0) return alert("You must selct a number; please try again.");
 
@@ -18,7 +20,6 @@ document.querySelector(".preview").addEventListener("click", function () {
   const generateCards = function (number) {
     for (let i = 0; i < number; i++) {
       let containerEl = document.createElement("div");
-      containerEl.innerHTML = "";
       let smallCard = document.createElement("form");
       containerEl.append(smallCard);
       let firstName = document.createElement("p");
