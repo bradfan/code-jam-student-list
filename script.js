@@ -5,7 +5,7 @@ const lastNames = ["Jones", "Smith", "Brown", "White", "Johnson", "Baggins", "Lo
 const globalContainerEl = document.getElementById("containerEl");
 
 const randomAge = () => Math.trunc(Math.random() * 18 + 18);
-const randomGPA = () => (Math.random() * 4 + 1);
+const randomGPA = () => Math.trunc(Math.random() * 4 + 1);
 // const  = rando.toArray.slice(-9);
 console.log(randomGPA);
 
