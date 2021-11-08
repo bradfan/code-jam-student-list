@@ -13,7 +13,7 @@ document.querySelector(".preview").addEventListener("click", function () {
   // clears the created element upon each "click"
   containerEl.innerHTML = "";
   let number = Number(document.querySelector(".number").value);
-  if (number <= 0) return alert("You must selct a number greter than 1.");
+  if (number <= 0) return alert("You must choose at least one student to preview.");
 
   const fName = () => Math.trunc(Math.random() * firstNames.length);
 
